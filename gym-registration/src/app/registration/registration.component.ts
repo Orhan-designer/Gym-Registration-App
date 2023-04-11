@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from '../services/api.service';
+import { ToastrService } from 'ngx-toastr/public_api';
 
 @Component({
   selector: 'app-registration',
@@ -20,7 +22,11 @@ export class RegistrationComponent implements OnInit {
 
   public registerForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private apiService: ApiService,
+    private toastrService: ToastrService
+  ) { }
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -46,7 +52,10 @@ export class RegistrationComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.registerForm.value);
+    this.apiService.postRegistration(this.registerForm.value).subscribe(res => {
+      this.toastrService.success('Good')
+      this.registerForm.reset();
+    })
   }
 
   calculateBmi(heightValue: number) {
