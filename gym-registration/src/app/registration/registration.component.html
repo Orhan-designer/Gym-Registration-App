@@ -3,14 +3,24 @@
 </div>
 
 <div class="registration-form m-3 p-4">
-    <form>
+    <form [formGroup]="registerForm">
         <div class="row">
             <!-- First Name -->
             <div class="col-md-6">
                 <mat-form-field appearance="outline">
                     <mat-label>First Name</mat-label>
-                    <input matInput placeholder="First Name">
+                    <input matInput placeholder="First Name" formControlName="firstName" pattern="[a-zA-Z ]*"
+                        minlength="3" maxlength="20">
                     <mat-icon matSuffix>person</mat-icon>
+                    <mat-error *ngIf="registerForm.controls['firstName'].hasError('required')">You must enter you
+                        name</mat-error>
+                    <mat-error
+                        *ngIf="registerForm.controls['firstName'].hasError('pattern') && !registerForm.controls['firstName'].hasError('required')">Only
+                        letters are
+                        allowed</mat-error>
+                    <mat-error
+                        *ngIf="registerForm.controls['firstName'].hasError('minlength') && !registerForm.controls['firstName'].hasError('pattern')">Enter
+                        at least 3 character</mat-error>
                 </mat-form-field>
             </div>
 
@@ -18,8 +28,18 @@
             <div class="col-md-6">
                 <mat-form-field appearance="outline">
                     <mat-label>Last Name</mat-label>
-                    <input matInput placeholder="Last Name">
+                    <input matInput placeholder="Last Name" formControlName="lastName" pattern="[a-zA-Z ]*"
+                        minlength="3" maxlength="20">
                     <mat-icon matSuffix>person</mat-icon>
+                    <mat-error *ngIf="registerForm.controls['lastName'].hasError('required')">You must enter you
+                        last name</mat-error>
+                    <mat-error
+                        *ngIf="registerForm.controls['lastName'].hasError('pattern') && !registerForm.controls['lastName'].hasError('required')">Only
+                        letters are
+                        allowed</mat-error>
+                    <mat-error
+                        *ngIf="registerForm.controls['lastName'].hasError('minlength') && !registerForm.controls['lastName'].hasError('pattern')">Enter
+                        at least 3 character</mat-error>
                 </mat-form-field>
             </div>
 
@@ -27,17 +47,30 @@
             <div class="col-md-6">
                 <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input matInput placeholder="Email">
+                    <input matInput placeholder="Email" formControlName="email">
                     <mat-icon matSuffix>email</mat-icon>
+                    <mat-error *ngIf="registerForm.controls['email'].hasError('required')">You must enter
+                        email</mat-error>
+                    <mat-error
+                        *ngIf="registerForm.controls['email'].hasError('email') && !registerForm.controls['email'].hasError('required')">
+                        Not a valid email
+                    </mat-error>
                 </mat-form-field>
+
             </div>
 
             <!-- Mobile number -->
             <div class="col-md-6">
                 <mat-form-field appearance="outline">
                     <mat-label>Mobile Number</mat-label>
-                    <input matInput placeholder="Mobile">
+                    <input matInput placeholder="Mobile" formControlName="mobile" pattern="^[0-9+]*$">
                     <mat-icon matSuffix>smartphone</mat-icon>
+                    <mat-error *ngIf="registerForm.controls['mobile'].hasError('required')">Enter mobile
+                        number</mat-error>
+                    <mat-error
+                        *ngIf="registerForm.controls['mobile'].hasError('pattern') && !registerForm.controls['mobile'].hasError('required')">
+                        Only numbers are allowed
+                    </mat-error>
                 </mat-form-field>
             </div>
 
@@ -45,9 +78,15 @@
             <div class="col-md-6">
                 <mat-form-field appearance="outline">
                     <mat-label>Weight</mat-label>
-                    <input type="number" formControlName="weight" matInput placeholder="Weight">
+                    <input formControlName="weight" matInput placeholder="Weight" pattern="^[0-9+]*$" maxlength="3">
                     <mat-icon matSuffix>line_weight</mat-icon>
                     <mat-hint>Unit is KGs</mat-hint>
+                    <mat-error *ngIf="registerForm.controls['weight'].hasError('required')">Enter your
+                        weight</mat-error>
+                    <mat-error
+                        *ngIf="registerForm.controls['weight'].hasError('pattern') && !registerForm.controls['weight'].hasError('required')">
+                        Only numbers are allowed
+                    </mat-error>
                 </mat-form-field>
             </div>
 
@@ -55,9 +94,31 @@
             <div class="col-md-6">
                 <mat-form-field appearance="outline">
                     <mat-label>Height</mat-label>
-                    <input type="number" formControlName="height" matInput placeholder="Height">
+                    <input [readonly]="!this.registerForm.value?.weight" formControlName="height" matInput
+                        placeholder="Height" maxlength="4" pattern="^[0-9+.]*$">
                     <mat-icon matSuffix><i class="fa fa-text-height" aria-hidden="true"></i></mat-icon>
                     <mat-hint>Unit is meters</mat-hint>
+                    <mat-error *ngIf="registerForm.controls['height'].hasError('pattern')">
+                        Only numbers are allowed
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <!-- BMI -->
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>BMI</mat-label>
+                    <input readonly type="number" formControlName="bmi" matInput placeholder="BMI">
+                    <mat-icon matSuffix><i class="fa fa-sort-numeric-desc" aria-hidden="true"></i></mat-icon>
+                </mat-form-field>
+            </div>
+
+            <!-- BMI Result -->
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>BMI Result</mat-label>
+                    <input readonly formControlName="bmiResult" matInput placeholder="BMI Result">
+                    <mat-icon matSuffix><i class="fa fa-check" aria-hidden="true"></i></mat-icon>
                 </mat-form-field>
             </div>
 
@@ -100,11 +161,13 @@
             <div class="col-md-6 mt-4">
                 <mat-form-field appearance="outline">
                     <mat-label>Which of the following is important to you?</mat-label>
-                    <mat-select multiple>
+                    <mat-select multiple formControlName="important">
                         <mat-option *ngFor="let list of importantList" [value]="list">
                             {{list}}
                         </mat-option>
                     </mat-select>
+                    <mat-error *ngIf="registerForm.controls['important'].hasError('required')">Select the
+                        following</mat-error>
                 </mat-form-field>
             </div>
 
@@ -124,12 +187,14 @@
             <div class="col-md-6">
                 <mat-form-field appearance="outline">
                     <mat-label>Enquiry date</mat-label>
-                    <input matInput [matDatepicker]="picker">
+                    <input matInput [matDatepicker]="picker" formControlName="enquiryDate">
                     <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
+                    <mat-error *ngIf="registerForm.controls['enquiryDate'].hasError('required')">Choose date</mat-error>
                 </mat-form-field>
             </div>
         </div>
+        <button (click)="submit()" class="mt-4" mat-raised-button color="accent">Submit</button>
     </form>
 </div>
