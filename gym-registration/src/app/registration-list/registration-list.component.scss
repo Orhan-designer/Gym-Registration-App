@@ -1,0 +1,27 @@
+table {
+  width: 100%;
+}
+
+// td,
+// th {
+//   width: 11%;
+// }
+
+.green {
+  color: rgb(4, 217, 4);
+}
+
+.yellow {
+  color: rgb(255, 208, 22);
+}
+
+.back-to-registration {
+  width: 200px;
+  height: 40px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 208, 22);
+  color: black;
+}

@@ -1,159 +1,14 @@
 {
   "enquiry": [
     {
-      "firstName": "asdas",
-      "lastName": "dadad",
+      "firstName": "Orhan",
+      "lastName": "Mamedov",
       "email": "asd@asd.ru",
-      "mobile": "23423",
-      "weight": "2342",
-      "height": "2342",
-      "bmi": 0.000042662084928907466,
-      "bmiResult": "Underweight",
-      "gender": "",
-      "requireTrainer": "",
-      "package": "",
-      "important": [
-        "Energy and Endurance",
-        "Building Lean Muscle",
-        "Healthier Digestive System"
-      ],
-      "gymBefore": "",
-      "enquiryDate": "2023-04-26T21:00:00.000Z",
-      "id": 1
-    },
-    {
-      "firstName": "dasd",
-      "lastName": "dsasd",
-      "email": "asd@asd.ru",
-      "mobile": "2341423423",
-      "weight": "231",
+      "mobile": "123456",
+      "weight": "3123",
       "height": "3123",
       "bmi": 0.000031989733756213004,
       "bmiResult": "Underweight",
-      "gender": "",
-      "requireTrainer": "",
-      "package": "",
-      "important": [
-        "Toxic Fat reduction",
-        "Energy and Endurance"
-      ],
-      "gymBefore": "",
-      "enquiryDate": "2023-04-19T21:00:00.000Z",
-      "id": 2
-    },
-    {
-      "firstName": "sdfdsfdsf",
-      "lastName": "fsdfdsfds",
-      "email": "sdf@fsdf.ru",
-      "mobile": "5345345",
-      "weight": "24",
-      "height": "32",
-      "bmi": 0.0029296875,
-      "bmiResult": "Underweight",
-      "gender": "",
-      "requireTrainer": "",
-      "package": "",
-      "important": [
-        "Energy and Endurance",
-        "Building Lean Muscle",
-        "Healthier Digestive System"
-      ],
-      "gymBefore": "",
-      "enquiryDate": "2023-04-03T21:00:00.000Z",
-      "id": 3
-    },
-    {
-      "firstName": "dadasd",
-      "lastName": "asdasdasd",
-      "email": "asdas@asda.by",
-      "mobile": "5342341312",
-      "weight": "213",
-      "height": "342",
-      "bmi": 0.00029068773297766834,
-      "bmiResult": "Underweight",
-      "gender": "Monthly",
-      "requireTrainer": "Yes",
-      "package": "",
-      "important": [
-        "Energy and Endurance",
-        "Healthier Digestive System",
-        "Sugar Craving Body"
-      ],
-      "gymBefore": "",
-      "enquiryDate": "2023-04-20T21:00:00.000Z",
-      "id": 4
-    },
-    {
-      "firstName": "Orhan",
-      "lastName": "Mamedov",
-      "email": "test@test.ru",
-      "mobile": "123456789",
-      "weight": "82",
-      "height": "172",
-      "bmi": 0.0005746349378042185,
-      "bmiResult": "Underweight",
-      "gender": "Male",
-      "requireTrainer": "No",
-      "package": "Quarterly",
-      "important": [
-        "Energy and Endurance",
-        "Building Lean Muscle"
-      ],
-      "gymBefore": "",
-      "enquiryDate": "2023-04-20T21:00:00.000Z",
-      "id": 5
-    },
-    {
-      "firstName": "Jhon",
-      "lastName": "Doe",
-      "email": "doe@yandex.ru",
-      "mobile": "3842342341",
-      "weight": "72",
-      "height": "187",
-      "bmi": 0.05370470988589894,
-      "bmiResult": "Underweight",
-      "gender": "Male",
-      "requireTrainer": "Yes",
-      "package": "Quarterly",
-      "important": [
-        "Building Lean Muscle",
-        "Healthier Digestive System",
-        "Sugar Craving Body"
-      ],
-      "gymBefore": "Yes",
-      "enquiryDate": "2023-04-26T21:00:00.000Z",
-      "id": 6
-    },
-    {
-      "firstName": "Jon",
-      "lastName": "Doe",
-      "email": "asda@asd.ru",
-      "mobile": "324234234",
-      "weight": "234",
-      "height": "2423",
-      "bmi": 0.000041220052226828156,
-      "bmiResult": "Underweight",
-      "gender": "Male",
-      "requireTrainer": "Yes",
-      "package": "Quarterly",
-      "important": [
-        "Building Lean Muscle",
-        "Healthier Digestive System",
-        "Sugar Craving Body"
-      ],
-      "gymBefore": "Yes",
-      "enquiryDate": "2023-04-24T21:00:00.000Z",
-      "id": 7
-    },
-    {
-      "firstName": "sdasd",
-      "lastName": "asdasd",
-      "email": "sdasd@asd.ru",
-      "mobile": "13123213",
-      "weight": "1231",
-      "height": "1231",
-      "bmi": 0.00008116877760480836,
-      "bmiResult": "Underweight",
       "gender": "Male",
       "requireTrainer": "Yes",
       "package": "Quarterly",
@@ -162,52 +17,8 @@
         "Building Lean Muscle"
       ],
       "gymBefore": "Yes",
-      "enquiryDate": "2023-04-19T21:00:00.000Z",
-      "id": 8
-    },
-    {
-      "firstName": "first",
-      "lastName": "second",
-      "email": "email@email.ru",
-      "mobile": "23234234",
-      "weight": "34",
-      "height": "4234",
-      "bmi": 0.00002359601480602514,
-      "bmiResult": "Underweight",
-      "gender": "Male",
-      "requireTrainer": "Yes",
-      "package": "Yearly",
-      "important": [
-        "Toxic Fat reduction",
-        "Fitness"
-      ],
-      "gymBefore": "Yes",
-      "enquiryDate": "2023-04-20T21:00:00.000Z",
-      "id": 9
-    },
-    {
-      "firstName": "sdfsdf",
-      "lastName": "fsdfdsf",
-      "email": "dsf@sdf.ru",
-      "mobile": "23423423",
-      "weight": "234",
-      "height": "234",
-      "bmi": 0.00042004529184016366,
-      "bmiResult": "Underweight",
-      "gender": "Female",
-      "requireTrainer": "Yes",
-      "package": "Quarterly",
-      "important": [
-        "Toxic Fat reduction",
-        "Energy and Endurance",
-        "Building Lean Muscle",
-        "Healthier Digestive System",
-        "Sugar Craving Body",
-        "Fitness"
-      ],
-      "gymBefore": "No",
       "enquiryDate": "2023-04-27T21:00:00.000Z",
-      "id": 10
+      "id": 1
     }
   ]
 }

@@ -17,11 +17,13 @@ import { ToastrModule } from 'ngx-toastr';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { RegistrationListComponent } from './registration-list/registration-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     AppComponent,
     RegistrationComponent,
     RegistrationListComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -51,8 +54,9 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatDialogModule,
     ToastrModule.forRoot({
-      timeOut: 5000,
+      timeOut: 1500,
       positionClass: 'toast-top-center',
       preventDuplicates: true,
     })
