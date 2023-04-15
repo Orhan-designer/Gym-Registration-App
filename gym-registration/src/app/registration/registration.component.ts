@@ -1,7 +1,7 @@
+import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
-import { ToastrService } from 'ngx-toastr/public_api';
 
 @Component({
   selector: 'app-registration',
@@ -53,7 +53,7 @@ export class RegistrationComponent implements OnInit {
 
   submit() {
     this.apiService.postRegistration(this.registerForm.value).subscribe(res => {
-      this.toastrService.success('Good')
+      this.toastrService.success('Success', 'Enquiry Added');
       this.registerForm.reset();
     })
   }
