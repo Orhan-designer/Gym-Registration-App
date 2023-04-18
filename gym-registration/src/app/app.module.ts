@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,6 +18,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatChipsModule } from '@angular/material/chips';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -38,7 +41,6 @@ import { DialogComponent } from './dialog/dialog.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
@@ -55,6 +57,9 @@ import { DialogComponent } from './dialog/dialog.component';
     MatPaginatorModule,
     MatSortModule,
     MatDialogModule,
+    MatCardModule,
+    MatListModule,
+    MatChipsModule,
     ToastrModule.forRoot({
       timeOut: 1500,
       positionClass: 'toast-top-center',

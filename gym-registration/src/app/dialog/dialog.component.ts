@@ -13,15 +13,9 @@ export class DialogComponent implements OnInit {
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.dialog.open(RegistrationListComponent, {
-      width: '100%',
-      height: '100%',
       enterAnimationDuration,
       exitAnimationDuration,
     });
-  }
-
-  closeDialog() {
-    this.dialogRef.close(true);
   }
 
   ngOnInit(): void {

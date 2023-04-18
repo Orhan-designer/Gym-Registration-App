@@ -19,6 +19,28 @@
       "gymBefore": "Yes",
       "enquiryDate": "2023-04-27T21:00:00.000Z",
       "id": 1
+    },
+    {
+      "firstName": "July",
+      "lastName": "Danskih",
+      "email": "july@yandex.ru",
+      "mobile": "42342355345",
+      "weight": "62",
+      "height": "1.72",
+      "bmi": 0.5746349378042186,
+      "bmiResult": "Underweight",
+      "gender": "Female",
+      "requireTrainer": "Yes",
+      "package": "Yearly",
+      "important": [
+        "Energy and Endurance",
+        "Building Lean Muscle",
+        "Sugar Craving Body",
+        "Fitness"
+      ],
+      "gymBefore": "Yes",
+      "enquiryDate": "2023-04-21T21:00:00.000Z",
+      "id": 2
     }
   ]
 }
