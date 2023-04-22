@@ -58,11 +58,15 @@ export class RegistrationComponent implements OnInit {
 
     //Получаем пользователя по id, при переходе на страницу редактирования, отображаем предыдущие данные о нем
     this.activatedRoute.params.subscribe(val => {
+      //Приходит undefined, т.к id юзера изначально не найдено на странице http://localhost:4200/register
       this.userIdToUpdate = val['id'];
-      this.apiService.getRegisteredUserById(this.userIdToUpdate).subscribe(res => {
-        this.isUpdateActivate = true;
-        this.fillFormToUpdate(res);
-      })
+
+      if (this.userIdToUpdate !== undefined) {
+        this.apiService.getRegisteredUserById(this.userIdToUpdate).subscribe(res => {
+          this.isUpdateActivate = true;
+          this.fillFormToUpdate(res);
+        });
+      }
     })
   }
 
