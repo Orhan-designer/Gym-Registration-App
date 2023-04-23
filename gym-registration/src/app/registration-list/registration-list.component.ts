@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-registration-list',
@@ -38,7 +39,8 @@ export class RegistrationListComponent implements OnInit {
     private apiService: ApiService,
     private router: Router,
     private toastr: ToastrService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private spinner: NgxSpinnerService
   ) { }
 
   getUsers() {
@@ -60,8 +62,13 @@ export class RegistrationListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(res => {
       if (res === 'true') {
         this.apiService.deleteRegisteredUser(id).subscribe(res => {
-          this.toastr.success('Success', 'Deleted Successfully');
-          this.getUsers();
+          this.spinner.show();
+
+          setTimeout(() => {
+            this.toastr.success('Success', 'Deleted Successfully');
+            this.getUsers();
+            this.spinner.hide();
+          }, 2000);
         })
       }
     });

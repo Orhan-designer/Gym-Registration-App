@@ -198,9 +198,17 @@
         <button *ngIf="!isUpdateActivate" (click)="submit()" [disabled]="!registerForm.valid" class="submit mt-4"
             mat-raised-button color="accent">Submit</button>
         <button *ngIf="isUpdateActivate" (click)="update()" class="update mt-4" mat-raised-button color="accent">
-            <ngx-spinner size="medium" type="ball-spin-clockwise"></ngx-spinner>
             Update
         </button>
     </form>
-
 </div>
+
+<!-- Update spinner -->
+<ngx-spinner size="medium" type="ball-spin-clockwise" *ngIf="isUpdateActivate">
+    <p style="color: white">Update in progress...</p>
+</ngx-spinner>
+
+<!-- Register spinner -->
+<ngx-spinner size="medium" type="ball-spin-clockwise" *ngIf="!isUpdateActivate">
+    <p style="color: white">Register in progress...</p>
+</ngx-spinner>

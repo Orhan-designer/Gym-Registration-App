@@ -74,8 +74,14 @@ export class RegistrationComponent implements OnInit {
   //Регистрируем пользователя и обноваляем поля
   submit() {
     this.apiService.postRegistration(this.registerForm.value).subscribe(res => {
-      this.toastrService.success('Success', 'Enquiry Added');
-      this.registerForm.reset();
+      this.spinner.show();
+
+      setTimeout(() => {
+        this.toastrService.success('Success', 'Enquiry Added');
+        this.registerForm.reset();
+        this.router.navigate(['list']);
+        this.spinner.hide();
+      }, 2000);
     });
   }
 
@@ -89,7 +95,7 @@ export class RegistrationComponent implements OnInit {
         this.registerForm.reset();
         this.router.navigate(['list']);
         this.spinner.hide();
-      }, 1500);
+      }, 2000);
     });
   }
 
