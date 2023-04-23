@@ -197,7 +197,10 @@
         </div>
         <button *ngIf="!isUpdateActivate" (click)="submit()" [disabled]="!registerForm.valid" class="submit mt-4"
             mat-raised-button color="accent">Submit</button>
-        <button *ngIf="isUpdateActivate" (click)="update()" [disabled]="!registerForm.valid" class="update mt-4"
-            mat-raised-button color="accent">Update</button>
+        <button *ngIf="isUpdateActivate" (click)="update()" class="update mt-4" mat-raised-button color="accent">
+            <ngx-spinner size="medium" type="ball-spin-clockwise"></ngx-spinner>
+            Update
+        </button>
     </form>
+
 </div>

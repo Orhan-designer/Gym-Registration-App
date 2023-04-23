@@ -18,5 +18,11 @@ table {
   justify-content: center;
   align-items: center;
   background-color: rgb(255, 208, 22);
+  font-size: 15px;
+  letter-spacing: .5px;
   color: black;
+
+  mat-icon {
+    font-size: 21px;
+  }
 }

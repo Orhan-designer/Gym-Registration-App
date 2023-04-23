@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../models/user.model';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-registration',
@@ -21,7 +22,6 @@ export class RegistrationComponent implements OnInit {
     'Sugar Craving Body',
     'Fitness'
   ];
-
   public registerForm!: FormGroup;
   public userIdToUpdate!: number;
   public isUpdateActivate: boolean = false;
@@ -31,7 +31,8 @@ export class RegistrationComponent implements OnInit {
     private apiService: ApiService,
     private toastrService: ToastrService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private spinner: NgxSpinnerService
   ) { }
 
   ngOnInit(): void {
@@ -81,9 +82,14 @@ export class RegistrationComponent implements OnInit {
   //Обновление пользователя
   update() {
     this.apiService.updateRegisteredUser(this.registerForm.value, this.userIdToUpdate).subscribe(res => {
-      this.toastrService.success('Success', 'Enquiry update');
-      this.registerForm.reset();
-      this.router.navigate(['list']);
+      this.spinner.show();
+
+      setTimeout(() => {
+        this.toastrService.success('Success', 'Enquiry update');
+        this.registerForm.reset();
+        this.router.navigate(['list']);
+        this.spinner.hide();
+      }, 1500);
     });
   }
 
