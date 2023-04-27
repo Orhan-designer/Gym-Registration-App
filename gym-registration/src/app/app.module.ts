@@ -23,6 +23,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { NgxMaskModule } from 'ngx-mask';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -64,6 +65,7 @@ import { DialogComponent } from './dialog/dialog.component';
     MatChipsModule,
     MatProgressSpinnerModule,
     NgxSpinnerModule,
+    NgxMaskModule.forRoot(),
     ToastrModule.forRoot({
       timeOut: 1500,
       positionClass: 'toast-top-center',

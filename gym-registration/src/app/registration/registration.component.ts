@@ -100,21 +100,21 @@ export class RegistrationComponent implements OnInit {
   }
 
   calculateBmi(heightValue: number) {
-    const weight = this.registerForm.value.height;
+    const weight = this.registerForm.value.weight;
     const height = heightValue;
-    const bmi = weight / (height * height);
+    const bmi = (weight / Math.pow(height, 2) * 10000).toFixed(1);
     this.registerForm.controls['bmi'].patchValue(bmi);
 
     switch (true) {
-      case bmi < 18.5:
+      case bmi <= '18.5':
         this.registerForm.controls['bmiResult'].patchValue('Underweight');
         break;
 
-      case (bmi >= 18.5 && bmi < 25):
+      case (bmi >= '18.5' && bmi < '25'):
         this.registerForm.controls['bmiResult'].patchValue('Normal weight');
         break;
 
-      case (bmi >= 25 && bmi < 30):
+      case (bmi >= '25' && bmi < '30'):
         this.registerForm.controls['bmiResult'].patchValue('Overweight');
         break;
 

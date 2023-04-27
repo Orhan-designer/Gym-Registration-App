@@ -45,11 +45,50 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    // background-color: red;
   }
 
   .mat-dialog-content {
     text-align: center;
     margin-bottom: 20px;
+  }
+}
+
+.mat-card {
+  // border-radius: 4px;
+  // border-width: 2px;
+  // border-style: solid;
+  // border-image: linear-gradient(to right, red, orange) 1;
+
+  --borderWidth: 3px;
+  position: relative;
+  border-radius: var(--borderWidth);
+}
+
+.mat-card:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #00D7B9, #B95DD7 50%, #FFB367 100%);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
   }
 }

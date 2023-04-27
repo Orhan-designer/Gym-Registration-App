@@ -1,24 +1,24 @@
 {
   "enquiry": [
     {
-      "firstName": "Orhan",
-      "lastName": "Mamedov",
-      "email": "just.hanmamedov@gmail.com",
-      "mobile": "243234",
-      "weight": "4234",
-      "height": "234",
-      "bmi": 0.00042004529184016366,
-      "bmiResult": "Underweight",
+      "firstName": "Misha",
+      "lastName": "Pateev",
+      "email": "sdf@asdf.ru",
+      "mobile": "375447870621",
+      "weight": "65",
+      "height": "172",
+      "bmi": "22.0",
+      "bmiResult": "Normal weight",
       "gender": "Male",
       "requireTrainer": "Yes",
-      "package": "Monthly",
+      "package": "Yearly",
       "important": [
         "Building Lean Muscle",
         "Healthier Digestive System"
       ],
-      "gymBefore": "Yes",
-      "enquiryDate": "2023-04-21T21:00:00.000Z",
-      "id": 1
+      "gymBefore": "No",
+      "enquiryDate": "2023-04-10T21:00:00.000Z",
+      "id": 2
     }
   ]
 }
