@@ -44,11 +44,15 @@ export class RegistrationListComponent implements OnInit {
   ) { }
 
   getUsers() {
+    this.spinner.show()
     this.apiService.getRegisteredUser().subscribe(res => {
-      this.users = res;
-      this.dataSource = new MatTableDataSource(this.users);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
+      setTimeout(() => {
+        this.users = res;
+        this.dataSource = new MatTableDataSource(this.users);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+        this.spinner.hide();
+      }, 500)
     })
   }
 

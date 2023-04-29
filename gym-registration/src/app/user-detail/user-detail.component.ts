@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user.model';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-user-detail',
@@ -14,13 +15,18 @@ export class UserDetailComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private spinner: NgxSpinnerService
   ) { }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.activatedRoute.params.subscribe(val => {
-      this.userId = val['id'];
-      this.fetchUserDetails(this.userId);
+      setTimeout(() => {
+        this.userId = val['id'];
+        this.fetchUserDetails(this.userId);
+        this.spinner.hide();
+      }, 500);
     })
   }
 

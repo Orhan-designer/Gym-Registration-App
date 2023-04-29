@@ -25,6 +25,7 @@ export class RegistrationComponent implements OnInit {
   public registerForm!: FormGroup;
   public userIdToUpdate!: number;
   public isUpdateActivate: boolean = false;
+  public showSpinnerLoadingText: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -69,6 +70,13 @@ export class RegistrationComponent implements OnInit {
         });
       }
     })
+
+    this.showSpinnerLoadingText = 'Loading...';
+    this.spinner.show();
+
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 500);
   }
 
   //Регистрируем пользователя и обноваляем поля
