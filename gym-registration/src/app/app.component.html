@@ -1,14 +1,9 @@
-<mat-toolbar class="toolbar">
-    <h1>Gym Registration App</h1>
-    <span class="example-spacer"></span>
+<div class="wrapper">
+    <app-header></app-header>
 
-    <button mat-raised-button routerLink="/list" class="view-enquiries">
-        View Enquiries
-    </button>
-</mat-toolbar>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
 
-<div class="container">
-    <router-outlet></router-outlet>
+    <app-footer></app-footer>
 </div>
-
-<ngx-spinner size="medium" type="ball-spin-clockwise"></ngx-spinner>

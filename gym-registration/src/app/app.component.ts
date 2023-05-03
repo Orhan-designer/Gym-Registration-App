@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'gym-registration';
+  public footer: boolean = false;
 
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.footer = true;
+  }
 }
 
 

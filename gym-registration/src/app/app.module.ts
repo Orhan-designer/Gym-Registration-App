@@ -30,6 +30,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { RegistrationListComponent } from './registration-list/registration-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { DialogComponent } from './dialog/dialog.component';
     RegistrationComponent,
     RegistrationListComponent,
     UserDetailComponent,
-    DialogComponent
+    DialogComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
