@@ -1,0 +1,30 @@
+img {
+  width: 180px;
+  height: 130px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.submit {
+  background-color: rgb(255, 208, 22);
+  color: black;
+}
+
+.update {
+  background-color: rgb(255, 208, 22);
+  color: black;
+}
+
